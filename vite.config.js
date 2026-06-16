@@ -1,9 +1,26 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'LifeOS · 个人观测站',
+        short_name: 'LifeOS',
+        description: '用数据观测自己，看清什么影响你的行为',
+        theme_color: '#6366f1',
+        background_color: '#f9fafb',
+        display: 'standalone',
+        start_url: '/lifeos/',
+        icons: [
+          { src: '/lifeos/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
+        ],
+      },
+    }),
+  ],
   base: '/lifeos/',
   build: { outDir: 'docs', emptyOutDir: true },
 })
