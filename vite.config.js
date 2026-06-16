@@ -17,6 +17,8 @@ export default defineConfig({
         start_url: '/lifeos/',
         icons: [
           { src: '/lifeos/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
+          { src: '/lifeos/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/lifeos/icon-512.png', sizes: '512x512', type: 'image/png' },
         ],
       },
     }),
